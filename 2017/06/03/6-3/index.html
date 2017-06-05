@@ -314,14 +314,8 @@
   
   
   
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
-<div class="tie-title-bar"><span class="tie-title">网友评论</span><div class="active-wrap"><span class="tie-actCount">1</span><span class="tie-join-txt">人参与</span></div></div>
-<div class="tie-input-bar"><div class="input-box" ne-id="tieBox" ne-tmpl="formTpl"><textarea rows="8" cols="80" class="tie-textarea" name="content" ne-focus="hideInputTip()" ne-blur="showInputTip()" ne-model="boxTie.content"></textarea><div class="input-tips" ne-click="hideInputTip()">欢迎您的光临！</div><div class="tie-submit-row"><div class="user-bar" ne-id="userBar" ne-tmpl="userBar"><div class="user-info"><img src="https://simg.ws.126.net/e/img5.cache.netease.com/tie/images/yun/photo_default_62.png.39x39.100.jpg" class="avatar" ne-click="showIwin()" ne-stat="stat(type-avatar|area-1|userId-114611683|loginType-cloudUser)"><span class="nickname" ne-click="showIwin()" ne-stat="stat(type-nickname|area-1|userId-114611683|loginType-cloudUser)">有态度网友06Rdnz</span><span class="split-line">|</span><span class="exit" ne-click="loginOut()" ne-stat="stat(type-logout|area-1)">退出</span></div></div><span class="tie-submit-btn" ne-click="submitTie()"><i class="icon"></i>发表跟贴</span><div ne-id="tipBox" ne-tmpl="tipTpl" ne-data=""></div></div></div></div>
-<div class="tie-tab-bar"><ul><li class="z-fcs" ne-click="changeTab(xin)" ne-stat="stat(type-newList|area-2)"><span>最新</span></li><li class="" ne-click="changeTab(hot)" ne-stat="stat(type-hotList|area-2)"><span>最热</span></li></ul><p class="promote-txt" ne-stat="stat(type-wordsLink|area-2)"></p></div>
-<div class="tie-panel-bar"><div class="panel-new" style="display: block;"><div class="tie-list" style="display: block;"><div class="single-tie"><div class="photo" ne-click="showIwin(1)" ne-stat="stat(type-avatar|area-2|userId-114611683|loginType-cloudUser)"><img src="https://nimg.ws.126.net/?url=http://tvax1.sinaimg.cn/crop.0.0.996.996.180/005McHnily8fee23g1nxvj30ro0rodhp.jpg&amp;thumbnail=39x39&amp;quality=100&amp;type=jpg"></div><div class="tie-bdy"><div class="bdy-inner"><div class="tie-author"><span class="name-nick" ne-click="showIwin(1)" ne-stat="stat(type-nickname|area-2|userId-114611683|loginType-cloudUser)">麦芽糖师父</span><span class="name-desp">[where的博客--江苏省网友]</span><span class="tie-time">2017-05-23 10:13:09</span></div><p class="tie-cnt">good job</p><div ne-id="toolBar" ne-tmpl="operateTpl" ne-data="1"><div class="tool-bar "><div ne-click="upTie(1)" ne-id="upTie:1" ne-tmpl="upTieTpl" ne-data="1" class=""><span class="icon i-up"></span><span class="u-num">0</span></div><div ne-click="downTie(1)" ne-id="downTie:1" ne-tmpl="downTieTpl" ne-data="1" class=""><span class="icon i-down"></span><span class="u-num">0</span></div><span class="i-split">|</span><div class="ygt-share-btn" ne-click="shareWin(1)" ne-stat="stat(type-share|area-2|commentId-91046307)" ne-id="shareBtn" ne-tmpl="shareTieTpl" ne-data="1"><span class="">分享</span></div><span class="i-split">|</span><div ne-click="buildReplyBox(1)" ne-stat="stat(type-replyClick|area-2)"><span class="">回复</span></div></div><div ne-id="replyBox" ne-tmpl=">replyTpl" ne-data="1"></div></div></div></div></div></div><div class="tie-empty-tip" data-display="block" style="display: none;"><a href="https://gentie.163.com/" target="_blank">网易云跟贴，有你更精彩</a></div><div class="tie-load-more" ne-click="loadMore()" ne-stat="stat(type-load|area-2)"><span class="load-sign">+</span><span class="load-txt">加载更多跟贴</span></div><div class="tie-page-wrapper" style="display: block;"><div class="no-more">没有更多跟贴了</div></div></div><div class="panel-hot" data-display="none" style="display: none;"><div class="tie-list"></div><div class="tie-empty-tip"><a href="https://gentie.163.com/" target="_blank">网易云跟贴，有你更精彩</a></div><div class="tie-load-more" ne-click="loadMore()" ne-stat="stat(type-load|area-2)"><span class="load-sign">+</span><span class="load-txt">加载更多跟贴</span></div><div class="tie-page-wrapper"></div></div></div>
-<div class="tie-i-mask"></div>
-<div class="tie-i-wrap"></div>
-</div>
+  <section class="duoshuo" id="comments">
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
     url: "http://yoursite.com/2017/06/03/6-3/", 
@@ -331,6 +325,7 @@
   };
 </script>
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+</section>
   
 
   
