@@ -165,6 +165,94 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-处理机三级调度" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/07/处理机三级调度/">处理机三级调度</a>
+    </h1>
+  
+
+		<br>
+		<span id="busuanzi_container_page_pv" style="color: rgb(239, 117, 34); font-size: 14px; display: inline;">
+            阅读数: <span id="busuanzi_value_page_pv">317</span>次 &nbsp;&nbsp;
+		</span>
+		
+		
+        
+        <a href="/2017/06/07/处理机三级调度/" class="archive-article-date">
+  	<time datetime="2017-06-07T07:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。</strong></p>
+<p>好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的<strong>妃子</strong>和<strong>皇上</strong>，<strong>进程</strong>呢，就是妃子，<strong>处理机</strong>呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就飞向她的寝宫了。<br><strong>这就是处理机的调度问题，他是OS设计的核心问题。</strong></p>
+<h3 id="调度的层次"><a href="#调度的层次" class="headerlink" title="调度的层次"></a>调度的层次</h3><p>一个作业从提交到完成，要经历<strong>三级调度</strong></p>
+<ul>
+<li>高级调度（又称作业调度）</li>
+<li>中级调度（又称内存调度）</li>
+<li>低级调度（又称进程调度）<h4 id="高级调度"><a href="#高级调度" class="headerlink" title="高级调度"></a><strong>高级调度</strong></h4>在<strong>批处理操作系统</strong>中，作业首先要进入的是系统在辅存中的后备作业队列中等候调度，因此，作业调度是必须要有的。按照一定的调度策略，决定把后备队列中的一些作业调入到内存中，然后创建进程、分配资源，并且把他们排在进程就绪队列中，使得这些进程获得竞争处理机的机会。但是要注意的是，在<strong>纯粹的分时或者实时操作系统</strong>中，为了<strong>缩短响应时间</strong>，作业直接建立在内存之中，所以，不需要配备作业调度。</li>
+</ul>
+<p>其实，作业就相当于选秀女，之前她们在皇宫外，即外存，只有被选上，才会进入皇宫大院，即内存之中，进入之后才能建立进程，获得争夺皇帝宠幸的机会。</p>
+<h4 id="中级调度"><a href="#中级调度" class="headerlink" title="中级调度"></a><strong>中级调度</strong></h4><p>引入中级调度的目的就是为了<strong>提高内存利用率和系统吞吐量</strong>，它将暂时不能运行的进程调入外存等待，此时的进程状态成为挂起状态，当具备运行条件而且内存中有空闲的时候，外存上已经具备运行条件的就会调回内存中，并修改其状态为就绪态，在就绪队列中等待。</p>
+<p>皇上好过分啊，不喜欢了就让自己的妃子走了，等想她了再让她回来，中级调度的引入，有点强啊。</p>
+<h4 id="低级调度"><a href="#低级调度" class="headerlink" title="低级调度"></a>低级调度</h4><p>低级调度它可以决定就绪队列中的哪一些进程可以获得处理机进入到执行阶段，其工作目标就是按照某种算法从就绪队列中选择进程并为其分配处理机，同时需要保存处理记得现场信息，以便快速恢复现场。同时进程调度又可分为剥夺方式和非剥夺方式。非剥夺方式顾名思义一旦进程获得处理机便一直执行直到进程完成或发生阻塞才释放处理机，该过程中不允许其他进程抢占处理机。因此剥夺方式就是进程获得处理机在执行的过程中根据某种原则可以剥夺该进程的处理机供自己执行。剥夺原则有：优先权原则，短进程原则、时间片原则等。</p>
+</blockquote>
+<p>下次再介绍进程调度的四种调度算法。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">进程管理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/07/处理机三级调度/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Markdown学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -452,6 +540,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">进程管理</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>

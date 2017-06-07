@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>6.3 | 1652</title>
+  <title>处理机三级调度 | 1652</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="-这世间，唯有梦想和好姑娘不可辜负。很幸运，我的梦想和好姑娘都在南方。你即将离开苏州，前去上海，虽然不是很远，但是，一个精致，一个精明。你的选择，我向来是支持的，不是我没有主见，没有想法，更不是不在乎，而是，我不想干预太多，不管现在以及将来。你是自由的，这和你是我的并没有冲突，你可以选择做你喜欢的事情，记得我在你身后就可以。  我喜欢你，喜欢你的笑，你的美，喜欢和你分享美好的事物，美好的风景，">
-<meta name="keywords" content="梦想,好姑娘">
+  <meta name="description" content="调度的概念基本概念首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。 好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的妃子和皇上，进程呢，就是妃子，处理机呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就">
+<meta name="keywords" content="操作系统,进程管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="6.3">
-<meta property="og:url" content="http://yoursite.com/2017/06/03/6-3/index.html">
+<meta property="og:title" content="处理机三级调度">
+<meta property="og:url" content="http://yoursite.com/2017/06/07/处理机三级调度/index.html">
 <meta property="og:site_name" content="1652">
-<meta property="og:description" content="-这世间，唯有梦想和好姑娘不可辜负。很幸运，我的梦想和好姑娘都在南方。你即将离开苏州，前去上海，虽然不是很远，但是，一个精致，一个精明。你的选择，我向来是支持的，不是我没有主见，没有想法，更不是不在乎，而是，我不想干预太多，不管现在以及将来。你是自由的，这和你是我的并没有冲突，你可以选择做你喜欢的事情，记得我在你身后就可以。  我喜欢你，喜欢你的笑，你的美，喜欢和你分享美好的事物，美好的风景，">
-<meta property="og:image" content="http://or25y298y.bkt.clouddn.com/%E4%B9%8C%E9%95%87.jpg">
-<meta property="og:updated_time" content="2017-06-06T09:48:55.390Z">
+<meta property="og:description" content="调度的概念基本概念首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。 好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的妃子和皇上，进程呢，就是妃子，处理机呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就">
+<meta property="og:updated_time" content="2017-06-07T07:49:33.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6.3">
-<meta name="twitter:description" content="-这世间，唯有梦想和好姑娘不可辜负。很幸运，我的梦想和好姑娘都在南方。你即将离开苏州，前去上海，虽然不是很远，但是，一个精致，一个精明。你的选择，我向来是支持的，不是我没有主见，没有想法，更不是不在乎，而是，我不想干预太多，不管现在以及将来。你是自由的，这和你是我的并没有冲突，你可以选择做你喜欢的事情，记得我在你身后就可以。  我喜欢你，喜欢你的笑，你的美，喜欢和你分享美好的事物，美好的风景，">
-<meta name="twitter:image" content="http://or25y298y.bkt.clouddn.com/%E4%B9%8C%E9%95%87.jpg">
+<meta name="twitter:title" content="处理机三级调度">
+<meta name="twitter:description" content="调度的概念基本概念首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。 好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的妃子和皇上，进程呢，就是妃子，处理机呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就">
   
     <link rel="alternative" href="/atom.xml" title="1652" type="application/atom+xml">
   
@@ -170,14 +168,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-6-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-处理机三级调度" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      6.3
+      处理机三级调度
     </h1>
   
 
@@ -188,20 +186,29 @@ var _hmt = _hmt || [];
 		
 		
         
-        <a href="/2017/06/03/6-3/" class="archive-article-date">
-  	<time datetime="2017-06-03T15:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-03</time>
+        <a href="/2017/06/07/处理机三级调度/" class="archive-article-date">
+  	<time datetime="2017-06-07T07:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://or25y298y.bkt.clouddn.com/%E4%B9%8C%E9%95%87.jpg" alt="乌镇"></p>
+        <blockquote>
+<h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。</strong></p>
+<p>好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的<strong>妃子</strong>和<strong>皇上</strong>，<strong>进程</strong>呢，就是妃子，<strong>处理机</strong>呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就飞向她的寝宫了。<br><strong>这就是处理机的调度问题，他是OS设计的核心问题。</strong></p>
+<h3 id="调度的层次"><a href="#调度的层次" class="headerlink" title="调度的层次"></a>调度的层次</h3><p>一个作业从提交到完成，要经历<strong>三级调度</strong></p>
 <ul>
-<li>-这世间，唯有梦想和好姑娘不可辜负。<br>很幸运，我的梦想和好姑娘都在南方。<br>你即将离开苏州，前去上海，虽然不是很远，但是，一个精致，一个精明。<br>你的选择，我向来是支持的，不是我没有主见，没有想法，更不是不在乎，而是，我不想干预太多，不管现在以及将来。<br>你是自由的，这和你是我的并没有冲突，你可以选择做你喜欢的事情，记得我在你身后就可以。</li>
+<li>高级调度（又称作业调度）</li>
+<li>中级调度（又称内存调度）</li>
+<li>低级调度（又称进程调度）<h4 id="高级调度"><a href="#高级调度" class="headerlink" title="高级调度"></a><strong>高级调度</strong></h4>在<strong>批处理操作系统</strong>中，作业首先要进入的是系统在辅存中的后备作业队列中等候调度，因此，作业调度是必须要有的。按照一定的调度策略，决定把后备队列中的一些作业调入到内存中，然后创建进程、分配资源，并且把他们排在进程就绪队列中，使得这些进程获得竞争处理机的机会。但是要注意的是，在<strong>纯粹的分时或者实时操作系统</strong>中，为了<strong>缩短响应时间</strong>，作业直接建立在内存之中，所以，不需要配备作业调度。</li>
 </ul>
-<p>我喜欢你，喜欢你的笑，你的美，喜欢和你分享美好的事物，美好的风景，美好的现在以及未来。<br>我也不知道用什么词语去形容你是最恰当的，我只能说，看见你，觉得一切都好，万物生长，向阳。</p>
-<p>不管任何时候，记得，还有我。</p>
+<p>其实，作业就相当于选秀女，之前她们在皇宫外，即外存，只有被选上，才会进入皇宫大院，即内存之中，进入之后才能建立进程，获得争夺皇帝宠幸的机会。</p>
+<h4 id="中级调度"><a href="#中级调度" class="headerlink" title="中级调度"></a><strong>中级调度</strong></h4><p>引入中级调度的目的就是为了<strong>提高内存利用率和系统吞吐量</strong>，它将暂时不能运行的进程调入外存等待，此时的进程状态成为挂起状态，当具备运行条件而且内存中有空闲的时候，外存上已经具备运行条件的就会调回内存中，并修改其状态为就绪态，在就绪队列中等待。</p>
+<p>皇上好过分啊，不喜欢了就让自己的妃子走了，等想她了再让她回来，中级调度的引入，有点强啊。</p>
+<h4 id="低级调度"><a href="#低级调度" class="headerlink" title="低级调度"></a>低级调度</h4><p>低级调度它可以决定就绪队列中的哪一些进程可以获得处理机进入到执行阶段，其工作目标就是按照某种算法从就绪队列中选择进程并为其分配处理机，同时需要保存处理记得现场信息，以便快速恢复现场。同时进程调度又可分为剥夺方式和非剥夺方式。非剥夺方式顾名思义一旦进程获得处理机便一直执行直到进程完成或发生阻塞才释放处理机，该过程中不允许其他进程抢占处理机。因此剥夺方式就是进程获得处理机在执行的过程中根据某种原则可以剥夺该进程的处理机供自己执行。剥夺原则有：优先权原则，短进程原则、时间片原则等。</p>
+</blockquote>
+<p>下次再介绍进程调度的四种调度算法。</p>
 
       
 
@@ -246,11 +253,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">梦想</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">好姑娘</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">进程管理</a>
         		</li>
       		
 		</ul>
@@ -306,7 +313,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/03/6-3/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/07/处理机三级调度/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,15 +330,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/06/06/Markdown学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Markdown学习
-        
-      </div>
-    </a>
   
+    <a href="/2017/06/06/Markdown学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -346,7 +349,7 @@ var _hmt = _hmt || [];
 <script>
   var cloudTieConfig = {
     url: "", 
-    sourceId: "2017/06/03/6-3/",
+    sourceId: "2017/06/07/处理机三级调度/",
     productKey: "eb70d7fde8874de1b44336a468a090aa",
     target: "cloud-tie-wrapper"
   };
