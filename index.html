@@ -193,20 +193,10 @@ var _hmt = _hmt || [];
       
         <blockquote>
 <h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。</strong></p>
-<p>好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的<strong>妃子</strong>和<strong>皇上</strong>，<strong>进程</strong>呢，就是妃子，<strong>处理机</strong>呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就飞向她的寝宫了。<br><strong>这就是处理机的调度问题，他是OS设计的核心问题。</strong></p>
-<h3 id="调度的层次"><a href="#调度的层次" class="headerlink" title="调度的层次"></a>调度的层次</h3><p>一个作业从提交到完成，要经历<strong>三级调度</strong></p>
-<ul>
-<li>高级调度（又称作业调度）</li>
-<li>中级调度（又称内存调度）</li>
-<li>低级调度（又称进程调度）<h4 id="高级调度"><a href="#高级调度" class="headerlink" title="高级调度"></a><strong>高级调度</strong></h4>在<strong>批处理操作系统</strong>中，作业首先要进入的是系统在辅存中的后备作业队列中等候调度，因此，作业调度是必须要有的。按照一定的调度策略，决定把后备队列中的一些作业调入到内存中，然后创建进程、分配资源，并且把他们排在进程就绪队列中，使得这些进程获得竞争处理机的机会。但是要注意的是，在<strong>纯粹的分时或者实时操作系统</strong>中，为了<strong>缩短响应时间</strong>，作业直接建立在内存之中，所以，不需要配备作业调度。</li>
-</ul>
-<p>其实，作业就相当于选秀女，之前她们在皇宫外，即外存，只有被选上，才会进入皇宫大院，即内存之中，进入之后才能建立进程，获得争夺皇帝宠幸的机会。</p>
-<h4 id="中级调度"><a href="#中级调度" class="headerlink" title="中级调度"></a><strong>中级调度</strong></h4><p>引入中级调度的目的就是为了<strong>提高内存利用率和系统吞吐量</strong>，它将暂时不能运行的进程调入外存等待，此时的进程状态成为挂起状态，当具备运行条件而且内存中有空闲的时候，外存上已经具备运行条件的就会调回内存中，并修改其状态为就绪态，在就绪队列中等待。</p>
-<p>皇上好过分啊，不喜欢了就让自己的妃子走了，等想她了再让她回来，中级调度的引入，有点强啊。</p>
-<h4 id="低级调度"><a href="#低级调度" class="headerlink" title="低级调度"></a>低级调度</h4><p>低级调度它可以决定就绪队列中的哪一些进程可以获得处理机进入到执行阶段，其工作目标就是按照某种算法从就绪队列中选择进程并为其分配处理机，同时需要保存处理记得现场信息，以便快速恢复现场。同时进程调度又可分为剥夺方式和非剥夺方式。非剥夺方式顾名思义一旦进程获得处理机便一直执行直到进程完成或发生阻塞才释放处理机，该过程中不允许其他进程抢占处理机。因此剥夺方式就是进程获得处理机在执行的过程中根据某种原则可以剥夺该进程的处理机供自己执行。剥夺原则有：优先权原则，短进程原则、时间片原则等。</p>
-</blockquote>
-<p>下次再介绍进程调度的四种调度算法。</p>
-
+<p>好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的<strong>妃子</strong>和<strong>皇上</strong>，<strong>进程</strong>呢，就是妃子，<strong>处理机</strong>呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就飞向她的寝宫了。<br><strong>这就是处理机的调度问题，他是OS设计的核心问题。</strong><br>
+        
+          <a class="article-more-a" href="/2017/06/07/处理机三级调度/#more">more >></a>
+        
       
 
       
@@ -282,41 +272,10 @@ var _hmt = _hmt || [];
         <blockquote>
 <p><code>#Markdown学习</code>一级标题</p>
 <p>##Markdown语法##<br><code>##Markdown语法</code>二级标题<br>使用email形式的’&gt;’角括号来做块的引用。<br>中间的Tab键就是空行<br>Atx形式在行首插入 1 到 6 个<code>#</code>，对应到标题 1 到 6 阶。<br><code>&gt;##Markdown语法二级标题</code></p>
-<p>##强调和修辞<br>Markdown 使用星号和底线来标记需要强调的区段。<br>Some of these words <em>are emphasized</em>.<br>Some of these words <em>are emphasized also</em>.<br>Use two asterisks for <strong>strong emphasis</strong>.<br>Or, if you prefer, <strong>use two underscores instead</strong>.</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>无序列表使用星号、加号和减号来做为列表的项目标记，这些符号是都可以&gt;使用的。</p>
-<ul>
-<li>Candy</li>
-<li>Gum</li>
-<li>Booze</li>
-</ul>
-<p><code>* Candy</code></p>
-<p><code>* Gum</code></p>
-<p><code>* Booze</code></p>
-<p>有序的列表则是使用一般的数字接着一个英文句点作为项目标记：</p>
-<ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ol>
-<p><code>1. Red</code></p>
-<p><code>2. Green</code></p>
-<p><code>3. Blue</code></p>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 支援两种形式的链接语法： 行内 和 参考 两种形式，两种都<br>是使用角括号来把文字转成连结。</p>
-<p>行内形式是直接在后面用括号直接接上链接：<br>This is an <a href="https://www.skylover941.com/" target="_blank" rel="external">example link</a>.<br><code>This is an [example link](https://www.skylover941.com/).</code></p>
-<p>你也可以选择性的加上 title 属性：<br>This is an <a href="https://www.skylover941.com/" title="我的博客" target="_blank" rel="external">example link</a>.<br><code>This is an [example link](https://www.skylover941.com/ &quot;我的博客&quot;).</code></p>
-<p>参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：<br>I get 10 times more traffic from [Google][1] than from<br>[Yahoo][2] or [MSN][3].</p>
-<p>[1]: <a href="http://google.com/" target="_blank" rel="external">http://google.com/</a> “Google”</p>
-<p>[2]: <a href="http://search.yahoo.com/" target="_blank" rel="external">http://search.yahoo.com/</a> “Yahoo Search”</p>
-<p>[3]: <a href="http://search.msn.com/" target="_blank" rel="external">http://search.msn.com/</a> “MSN Search”<br><code>I get 10 times more traffic from [Google][1] than from
-[Yahoo][2] or [MSN][3].</code><br><code>[1]: http://google.com/ &quot;Google&quot;</code><br><code>[2]: http://search.yahoo.com/ &quot;Yahoo Search&quot;</code><br><code>[3]: http://search.msn.com/ &quot;MSN Search&quot;</code></p>
-<p>MarkdownPad2给出的链接是行内形式</p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h4 id="行内形式"><a href="#行内形式" class="headerlink" title="行内形式"></a>行内形式</h4><p>行内形式（title 是选择性的）：<br><img src="http://or25y298y.bkt.clouddn.com/whitecloud.jpg" alt=""><br><code>![alt text](/path/to/img.jpg &quot;Title&quot;)</code><br><code>![](http://or25y298y.bkt.clouddn.com/whitecloud.jpg)</code></p>
-<p><strong>七牛云好慢的，但是毕竟免费，多担待了。</strong></p>
-</blockquote>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
-<p>说了这么多，其实，下载一个<strong><a href="http://www.markdownpad.com/" target="_blank" rel="external">MarkdownPad2</a></strong>全部解决了，而且简单快捷。</p>
-</blockquote>
-
+<p>##强调和修辞<br>Markdown 使用星号和底线来标记需要强调的区段。<br>Some of these words <em>are emphasized</em>.<br>Some of these words <em>are emphasized also</em>.<br>Use two asterisks for <strong>strong emphasis</strong>.<br>Or, if you prefer, <strong>use two underscores instead</strong>.<br>
+        
+          <a class="article-more-a" href="/2017/06/06/Markdown学习/#more">more >></a>
+        
       
 
       
@@ -391,11 +350,10 @@ var _hmt = _hmt || [];
       
         <p><img src="http://or25y298y.bkt.clouddn.com/%E4%B9%8C%E9%95%87.jpg" alt="乌镇"></p>
 <ul>
-<li>-这世间，唯有梦想和好姑娘不可辜负。<br>很幸运，我的梦想和好姑娘都在南方。<br>你即将离开苏州，前去上海，虽然不是很远，但是，一个精致，一个精明。<br>你的选择，我向来是支持的，不是我没有主见，没有想法，更不是不在乎，而是，我不想干预太多，不管现在以及将来。<br>你是自由的，这和你是我的并没有冲突，你可以选择做你喜欢的事情，记得我在你身后就可以。</li>
-</ul>
-<p>我喜欢你，喜欢你的笑，你的美，喜欢和你分享美好的事物，美好的风景，美好的现在以及未来。<br>我也不知道用什么词语去形容你是最恰当的，我只能说，看见你，觉得一切都好，万物生长，向阳。</p>
-<p>不管任何时候，记得，还有我。</p>
-
+<li>-这世间，唯有梦想和好姑娘不可辜负。<br>很幸运，我的梦想和好姑娘都在南方。<br>你即将离开苏州，前去上海，虽然不是很远，但是，一个精致，一个精明。<br>你的选择，我向来是支持的，不是我没有主见，没有想法，更不是不在乎，而是，我不想干预太多，不管现在以及将来。<br>你是自由的，这和你是我的并没有冲突，你可以选择做你喜欢的事情，记得我在你身后就可以。
+        
+          <a class="article-more-a" href="/2017/06/03/6-3/#more">more >></a>
+        
       
 
       

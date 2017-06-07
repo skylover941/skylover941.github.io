@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/07/处理机三级调度/index.html">
 <meta property="og:site_name" content="1652">
 <meta property="og:description" content="调度的概念基本概念首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。 好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的妃子和皇上，进程呢，就是妃子，处理机呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就">
-<meta property="og:updated_time" content="2017-06-07T07:49:33.518Z">
+<meta property="og:updated_time" content="2017-06-07T08:01:59.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="处理机三级调度">
 <meta name="twitter:description" content="调度的概念基本概念首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。 好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的妃子和皇上，进程呢，就是妃子，处理机呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就">
@@ -196,7 +196,7 @@ var _hmt = _hmt || [];
       
         <blockquote>
 <h2 id="调度的概念"><a href="#调度的概念" class="headerlink" title="调度的概念"></a>调度的概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>首先我们要了解为什么进行处理机调度的学习，学东西嘛，都要求一个为什么。</strong></p>
-<p>好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的<strong>妃子</strong>和<strong>皇上</strong>，<strong>进程</strong>呢，就是妃子，<strong>处理机</strong>呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就飞向她的寝宫了。<br><strong>这就是处理机的调度问题，他是OS设计的核心问题。</strong></p>
+<p>好啦，言归正传，大家都知道，在多道程序系统中，进程的数量往往是多于处理机的个数的，就像皇宫中的<strong>妃子</strong>和<strong>皇上</strong>，<strong>进程</strong>呢，就是妃子，<strong>处理机</strong>呢，就是皇上，必然会出现争宠的现象，所以，皇帝为了后宫的安宁就要对自己进行一个调度，皇上该把自己分配给那个妃子呢，从就绪队列中，按照一定的算法（公平公正啊），选择一个妃子，皇上就飞向她的寝宫了。<br><strong>这就是处理机的调度问题，他是OS设计的核心问题。</strong><br><a id="more"></a></p>
 <h3 id="调度的层次"><a href="#调度的层次" class="headerlink" title="调度的层次"></a>调度的层次</h3><p>一个作业从提交到完成，要经历<strong>三级调度</strong></p>
 <ul>
 <li>高级调度（又称作业调度）</li>
